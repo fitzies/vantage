@@ -1,0 +1,57 @@
+{
+  "name": "@ojflabs/vantage",
+  "version": "0.1.0",
+  "description": "Browser tracker for Vantage — self-hosted, multi-project analytics.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./react": {
+      "types": "./dist/react/index.d.ts",
+      "default": "./dist/react/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsc -p tsconfig.json --watch",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "pnpm clean && pnpm build"
+  },
+  "peerDependencies": {
+    "next": ">=14",
+    "react": ">=18"
+  },
+  "peerDependenciesMeta": {
+    "next": {
+      "optional": true
+    },
+    "react": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/react": "^19",
+    "next": "16.2.4",
+    "react": "19.2.4",
+    "typescript": "^5"
+  },
+  "sideEffects": false,
+  "keywords": [
+    "analytics",
+    "tracker",
+    "vantage",
+    "self-hosted"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

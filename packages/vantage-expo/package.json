@@ -1,0 +1,40 @@
+{
+  "name": "@ojflabs/vantage-expo",
+  "version": "0.1.0",
+  "description": "Expo / React Native tracker for Vantage — self-hosted, multi-project analytics.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsc -p tsconfig.json --watch",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "pnpm clean && pnpm build"
+  },
+  "devDependencies": {
+    "typescript": "^5"
+  },
+  "sideEffects": false,
+  "keywords": [
+    "analytics",
+    "expo",
+    "react-native",
+    "tracker",
+    "vantage",
+    "self-hosted"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}
